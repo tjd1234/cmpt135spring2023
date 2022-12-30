@@ -27,11 +27,8 @@ int num_tabs  = 0;
 int num_words = 0;
 
 int main() {
-    // first_whitespace tracks if the whitespace character is the first one in a
-    // sequence of 1 or more whitespace characters. Another way of understanding
-    // this is that the character immediately before a first whitespace
-    // character is *not* whitespace. Thus the number of first whitespace
-    // characters is a good approximation of the number of words in a file.
+    // first_whitespace tracks if the next whitespace character is the first one
+    // in a sequence of 1 or more whitespace characters.
     bool first_whitespace = true;
 
     char c;

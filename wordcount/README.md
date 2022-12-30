@@ -84,15 +84,6 @@ As mentioned, [count_chars1.cpp](count_chars1.cpp) is already pretty good. It's
 short, easy to read, and efficient. If it does what you need, then you don't
 need to create the later versions.
 
-[count_chars0.cpp](count_chars0.cpp) is an alternate implementation of
-[count_chars1.cpp](count_chars1.cpp) with two major differences: it has function
-called `skip_whitespace` that handles the problem of ignoring whitespace; and
-the `is_whitespace` function increments some of the count variables. It gives
-the same results as [count_chars1.cpp](count_chars1.cpp), and runs about the
-same speed, but it is more work to convert into the multi-file version. In
-[count_chars0.cpp](count_chars0.cpp), both`skip_whitespace` and `is_whitespace`
-both increment the counts. This means they are dependant upon *global
-variables*, which is not a wise idea (they may changes in unexpected ways).
-Further, the count variables are incremented in multiple places in
-[count_chars0.cpp](count_chars0.cpp). In contrast, they are only incremented in
-the main loop in [count_chars1.cpp](count_chars1.cpp).
+Counting lines and tabs is just counting `\n` and `\t` characters. But counting
+words is trickier, and relies on the observation that counting the chunks of
+whitespace between words is the same as counting the words.
