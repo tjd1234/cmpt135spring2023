@@ -23,3 +23,4 @@ Assignments will be posted here when they're ready.
 Some of the code use in class may be posted here.
 
 - [word count example](wordcount/)
+- [separate compilation examples](separate_compilation/)
