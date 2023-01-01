@@ -1,8 +1,8 @@
 ## Sample Midterms Questions
 
-- [135 sample midterm 1](sample_midterms/135midterm_sample1.pdf) ([solutions](sample_midterms/135midterm_sample1_solutions.pdf))
+- [135 sample midterm 1](sample_midterms/135midterm_sample1.pdf) ([solutions](sample_midterms/135midterm_sample1_sol.pdf))
 
-- [135 sample midterm 2](sample_midterms/135midterm_sample2.pdf) ([solutions](sample_midterms/135midterm_sample2_solutions.pdf))
+- [135 sample midterm 2](sample_midterms/135midterm_sample2.pdf) ([solutions](sample_midterms/135midterm_sample2_sol.pdf))
 
 ## Sample Final Exam Questions
 
