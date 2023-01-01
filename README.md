@@ -1,10 +1,16 @@
 # Welcome to CMPT 135!
 
+This site has some code that appears in lectures and is referenced from [the
+course notes](https://publish.obsidian.md/cmpt135) or [Canvas](sfu.canvas.ca).
 For course notes are in [this Obsidian
 website](https://publish.obsidian.md/cmpt135). Announcements, marks, assignment
-submission, discussion, etc. are in [Canvas](sfu.canvas.ca).
+submission, discussion, etc. are in [Canvas](sfu.canvas.ca), and the weekly
+lecture notes are [the course notes](https://publish.obsidian.md/cmpt135).
 
 ## Standard Course Files
+
+These are standard files used in most lectures and assignments. You should
+download them to your computer.
 
 - [standard course makefile](starter_files/makefile). Unless told otherwise, use
   it when compiling all your code for this course.
@@ -29,4 +35,4 @@ Some of the code used in class may be posted here.
 
 - [word count example](wordcount/)
 - [separate compilation examples](separate_compilation/)
-- [sample exam questions](sample_questions/)
+- [sample exams](sample_exams/)
