@@ -1,5 +1,3 @@
-# Sample Exams
-
 ## Sample Midterms Questions
 
 - [135 sample midterm 1](sample_midterms/135midterm_sample1.pdf) ([solutions](sample_midterms/135midterm_sample1_solutions.pdf))
