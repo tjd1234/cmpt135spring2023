@@ -1,0 +1,61 @@
+Once upon a time.
+Onceuponatime.
+time. a upon Once
+dcba
+dcba
+"Once upon a time."
+"Onceuponatime."
+"time. a upon Once"
+"dcba"
+"dcba"
+""
+Usage: ./myecho [-runtests|-(hrs)] [string ...]
+  -runtests: run the tests
+             over-rides single-character flags
+         -h: print this help message
+             over-rides other single-character flags
+         -r: print the strings in reverse order
+         -s: no space between arguments
+         -q: quote the printed results
+   -rs, -sr: no space between arguments, in reverse order
+
+  Repeated single-character flags are allowed (and are ignored).
+  Unknown flags cause an error.
+
+
+Examples:
+  ❯ ./myecho -q
+  ""
+  ❯ ./myecho x y z
+  x y z
+  ❯ ./myecho -q x y z
+  "x y z"
+  ❯ ./myecho -sr x y z
+  zyx
+  ❯ ./myecho -h
+Usage: ./myecho [-runtests|-(hrs)] [string ...]
+  -runtests: run the tests
+             over-rides single-character flags
+         -h: print this help message
+             over-rides other single-character flags
+         -r: print the strings in reverse order
+         -s: no space between arguments
+         -q: quote the printed results
+   -rs, -sr: no space between arguments, in reverse order
+
+  Repeated single-character flags are allowed (and are ignored).
+  Unknown flags cause an error.
+
+
+Examples:
+  ❯ ./myecho -q
+  ""
+  ❯ ./myecho x y z
+  x y z
+  ❯ ./myecho -q x y z
+  "x y z"
+  ❯ ./myecho -sr x y z
+  zyx
+  ❯ ./myecho -h
+testing to_string ... all tests passed
+testing is_flag ...all tests passed
