@@ -29,6 +29,12 @@ download them to your computer.
 
 Assignments will be posted here when they're ready.
 
+- [Assignment 1](assignments/a1)
+- Assignment 2
+- Assignment 3
+- Assignment 4
+- Assignment 5
+
 ## Course Notes
 
 Some of the code used in class may be posted here.
