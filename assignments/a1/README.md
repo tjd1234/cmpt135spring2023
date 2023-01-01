@@ -462,22 +462,22 @@ this marking scheme.
 To get full marks, your functions must pass all the test cases for that
 question. The marker may use test cases not given in the assignment.
 
-- Question 1 **2 marks**, `quote` and `test_quote`
-- Question 2 **2 marks**, `to_string` and `test_to_string`
-- Question 3 **2 marks**
-- Question 4 **2 marks**
-- Question 5 **2 marks**
-- Question 6 **2 marks**
-- Question 7 **2 marks**
-- Question 8 **2 marks**
-- Question 9 **3 marks**
+- Question 1: **2 marks**, `quote` and `test_quote`
+- Question 2: **2 marks**, `to_string` and `test_to_string`
+- Question 3: **2 marks**
+- Question 4: **2 marks**
+- Question 5: **2 marks**
+- Question 6: **2 marks**
+- Question 7: **2 marks**
+- Question 8: **2 marks**
+- Question 9: **3 marks**
 
 #### Deductions
 - **-1 mark** (at least) if your file does not have the correct name
 - **a score of 0** if you accidentally submit a "wrong" non-working file, and
   then *after the due date* submit the "right" file. If you can provide evidence
-  that you finished the assignment on time, then it may be marked (and probably
-  with a late penalty).
+  that you finished the assignment on time, then it may be marked (probably with
+  a late penalty).
 
 
 ## Submitting Your Assignment
