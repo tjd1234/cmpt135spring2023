@@ -379,7 +379,7 @@ Error, unknown flag: -Q
   into a `vector<string>`. 
 
 - You are not *required* to use `quote` and `<<` in the *implementation* of
-  `myecho`, but it they can be useful for printing when debugging.
+  `myecho`, but they can be useful for printing when debugging.
 
 - The logic for handling flags can get tricky, so make it as simple as possible,
   even if you need to sacrifice some efficiency. For this assignment, code that
@@ -454,7 +454,7 @@ this marking scheme.
   obvious from the code itself. There should be *no* commented-out code from
   previous versions.
 
-#### **Overall source code performance and memory usage: 2 marks**
+#### **Overall performance and memory usage: 2 marks**
 - No unnecessary work is done.
 - No unnecessary memory is used.
 
