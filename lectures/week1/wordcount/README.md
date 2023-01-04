@@ -13,7 +13,7 @@ $ wc austenPandP.txt
 This tells us that [austenPandP.txt](austenPandP.txt) has 13427 lines, 124580
 words, and 704158 characters.
 
-Create your own version of `wc` that does each of these thigns:
+Create your own version of `wc` that does each of these things:
 
 1. **Count the number of characters in a file**. To do this, use `cin.get`.
    `cin.get(c)` sets the `char` `c` to the next character from `cin`. After
