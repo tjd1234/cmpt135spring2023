@@ -35,10 +35,13 @@ Assignments will be posted here when they're ready.
 - Assignment 4
 - Assignment 5
 
-## Course Notes
+## Sample Exams
+
+Various [sample exams and questions](sample_exams/).
+
+## Course Code
 
 Some of the code used in class may be posted here.
 
-- [word count example](wordcount/)
+- [Code used in lectures](lectures/)
 - [separate compilation examples](separate_compilation/)
-- [sample exams](sample_exams/)
