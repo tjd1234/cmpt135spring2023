@@ -37,8 +37,6 @@ int main() {
 
     // C++ range-based for-loop
     int total4 = 0;
-    for(int i : v) {
-        total4 += i;
-    }
+    for(int i : v) total4 += i;
     cout << "total4 = " << total4 << "\n";
 } // main

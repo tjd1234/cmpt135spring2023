@@ -13,7 +13,9 @@ int main() {
     switch (sep) {
         case ' ':
         case ',': cout << "A";
+                  break;
         case '-': cout << "B";
+                  break;
         default : cout << "C";
     }
 }
