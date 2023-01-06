@@ -6,7 +6,7 @@
 //
 // The file is read from cin, e.g.:
 //
-//    $ ./count_chars1 < austenPandP.txt
+//    > ./count_chars1 < austenPride.txt
 //    #chars: 704158
 //    #lines: 13427
 //    #tabs : 0
@@ -17,18 +17,25 @@
 
 using namespace std;
 
-// These are global variables. Global variables are often a bad idea because
-// they could be modified at any time by any part of the program, thus
-// potentially causing subtle bugs. But in a small program like this it is safe
-// and convenient to use globals variables.
+// global variables to hold the counts
 int num_chars = 0;
 int num_lines = 0;
 int num_tabs  = 0;
 int num_words = 0;
 
 int main() {
-    // first_whitespace tracks if the next whitespace character is the first one
-    // in a sequence of 1 or more whitespace characters.
+    //
+    // To count the number of words in the file, we use the trick of counting
+    // the number of whitespace characters *between* words. The first time we
+    // see a whitespace character we increment the word count, and then ignore
+    // any subsequent whitespace characters until we see a non-whitespace
+    // character.
+    //
+    // first_whitespace keeps track of when a whitespace character is the first
+    // one in a sequence of 1 or more whitespace characters. Essentially, the
+    // program ignores all whitespace characters *except* first ones in a
+    // sequence.
+    //
     bool first_whitespace = true;
 
     char c;

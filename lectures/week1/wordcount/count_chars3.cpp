@@ -1,9 +1,10 @@
 // count_chars3.cpp
 
 //
-// Based on count_chars2. Uses fstream to read the file.
+// Based on count_chars2. Uses fstream to read the file, and so it no longer
+// requires the the < redirection:
 //
-//   $ ./count_chars3 austenPandP.txt
+//   > ./count_chars3 austenPride.txt
 //   #chars: 704158
 //   #lines: 13427
 //   #tabs : 0
@@ -24,7 +25,7 @@ struct Count {
 
 
 int main() {
-    fstream infile("austenPandP.txt");
+    fstream infile("austenPride.txt");
 
     // Creates a Count object. All the counts are initialized to 0 in the
     // struct above.

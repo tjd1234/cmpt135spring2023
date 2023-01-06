@@ -4,7 +4,7 @@
 // Based on count_chars6. Re-write of `main` to allow for multiple files to be
 // passed as arguments.
 //
-//   $ ./count_chars7 austenPandP.txt
+//   > ./count_chars7 austenPride.txt
 //   #chars: 704158
 //   #lines: 13427
 //   #tabs : 0

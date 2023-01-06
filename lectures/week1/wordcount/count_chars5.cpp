@@ -3,7 +3,7 @@
 //
 // Based on count_chars4. Moves the fstream object inside the Count struct.
 //
-//   $ ./count_chars5 austenPandP.txt
+//   > ./count_chars5 austenPride.txt
 //   #chars: 704158
 //   #lines: 13427
 //   #tabs : 0

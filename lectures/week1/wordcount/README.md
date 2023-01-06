@@ -6,14 +6,15 @@ The standard Linux utility `wc` counts characters, lines, and words in a file.
 For example:
 
 ```
-$ wc austenPandP.txt
- 13427 124580 704158 austenPandP.txt
+> wc austenPride.txt
+ 13427 124580 704158 austenPride.txt
 ```
 
-This tells us that [austenPandP.txt](austenPandP.txt) has 13427 lines, 124580
-words, and 704158 characters.
+This says that [austenPride.txt](austenPride.txt) has 13427 lines, 124580 words,
+and 704158 characters.
 
-Create your own version of `wc` that does each of these things:
+Using the file [count_chars_start.cpp](count_chars_start.cpp) as a start, create
+your own version of `wc` that does this:
 
 1. **Count the number of characters in a file**. To do this, use `cin.get`.
    `cin.get(c)` sets the `char` `c` to the next character from `cin`. After
@@ -24,7 +25,7 @@ Create your own version of `wc` that does each of these things:
    use file re-direction in the shell to process a file like this:
   
    ```bash
-   $ ./count_chars < austenPandP.txt
+   > ./count_chars < austenPride.txt
    #chars: 704158
    #lines: 13427
    #tabs: 0
@@ -40,22 +41,41 @@ Create your own version of `wc` that does each of these things:
    tricky, so instead it is easier to count *non*-words, i.e. sequences of
    whitespace characters that appear between words. Count the number of
    sub-strings consisting of one or more whitespace characters, where whitespace
-   characters are: `' '` (space), `'\n'` (newline), and `'\t'` (tab).
+   characters are `' '` (space), `'\n'` (newline), and `'\t'` (tab).
 
 
 ### Sample Solutions
 
-The file [count_chars1.cpp](count_chars1.cpp) is a pretty good solution to the
-basic problem. To help understand C++ and object-oriented programming, we modify
-[count_chars1.cpp](count_chars1.cpp) a step at a time to become more
-object-oriented. The final result is [count_chars8.cpp](count_chars8.cpp), which
-counts characters in any number of files, and still has quite readable source
-code.
+[count_chars1.cpp](count_chars1.cpp) is a pretty good solution to the problem.
 
-[count_chars1.cpp](count_chars1.cpp) to [count_chars7.cpp](count_chars7.cpp)
-are a step-by-step conversion of a non-objected oriented program that uses
-global variables into an object-oriented one that can process *one or more*
-files passed through the command-line. Here are what each file does:
+Note the following about [count_chars1.cpp](count_chars1.cpp):
+
+- **It is short and readable**. Programmers don't want to have to read a lot of
+  messy code.
+
+- **It's pretty efficient in both time and memory**. It only reads the file
+  once, and no matter how how much input its scanning it uses the same tiny
+  amount of memory.
+
+- **It uses global variables to keep track of the counts**. In general, you
+  should *not* use global variables because any code in the program could
+  read/write them, and that makes it difficult to be sure what their values are
+  at any particular time. But, this program is a single function that is
+  relatively short and simple, and so there is not much possible harm in making
+  the counts global. If we were to later add more features, then we might want
+  to replace the global variables, e.g. see
+  [count_chars2.cpp](count_chars2.cpp).
+
+- **Counting the words is tricky**. The insight of counting the whitespace
+  *between* words is not completely obvious, and so that's a good reason to
+  explain it in the code with comments.
+
+## Extra
+
+To help understand object-oriented programming, here is a step-by-step
+modification of [count_chars1.cpp](count_chars1.cpp) into an object-oriented
+style. The final version, [count_chars7.cpp](count_chars7.cpp), counts
+characters in any number of files, and still has quite readable source code:
 
 - [count_chars1.cpp](count_chars1.cpp): Non-objected oriented word count
   program.
@@ -76,14 +96,3 @@ files passed through the command-line. Here are what each file does:
 
 - [count_chars7.cpp](count_chars7.cpp): Re-write of `main` to allow for multiple
   files to be passed as arguments.
-
-
-### Discussion
-
-As mentioned, [count_chars1.cpp](count_chars1.cpp) is already pretty good. It's
-short, easy to read, and efficient. If it does what you need, then you don't
-need to create the later versions.
-
-Counting lines and tabs is just counting `\n` and `\t` characters. But counting
-words is trickier, and relies on the observation that counting the chunks of
-whitespace between words is the same as counting the words.

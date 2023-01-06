@@ -4,7 +4,7 @@
 // Based on count_chars3. Reads the file name as an argument from the command
 // line.
 //
-//   $ ./count_chars4 austenPandP.txt
+//   > ./count_chars4 austenPride.txt
 //   #chars: 704158
 //   #lines: 13427
 //   #tabs : 0

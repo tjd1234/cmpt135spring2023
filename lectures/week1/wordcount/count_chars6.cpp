@@ -4,7 +4,7 @@
 // Based on count_chars5. Adds a constructor to Count to initialize its fstream.
 //
 //
-//   $ ./count_chars6 austenPandP.txt
+//   > ./count_chars6 austenPride.txt
 //   #chars: 704158
 //   #lines: 13427
 //   #tabs : 0
