@@ -1,4 +1,4 @@
-## Example: Counting Words
+## Example: Counting Words in a Text File
 
 ### The Problem
 
@@ -44,7 +44,7 @@ your own version of `wc` that does this:
    characters are `' '` (space), `'\n'` (newline), and `'\t'` (tab).
 
 
-### Sample Solutions
+### Sample Solution
 
 [count_chars1.cpp](count_chars1.cpp) is a pretty good solution to the problem.
 
@@ -58,17 +58,25 @@ Note the following about [count_chars1.cpp](count_chars1.cpp):
   amount of memory.
 
 - **It uses global variables to keep track of the counts**. In general, you
-  should *not* use global variables because any code in the program could
+  should *not* use global variables because *any* code in the program could
   read/write them, and that makes it difficult to be sure what their values are
   at any particular time. But, this program is a single function that is
   relatively short and simple, and so there is not much possible harm in making
-  the counts global. If we were to later add more features, then we might want
-  to replace the global variables, e.g. see
-  [count_chars2.cpp](count_chars2.cpp).
+  the counts global. If we were to later add more features, then the global
+  variables should be replaced, e.g. see [count_chars2.cpp](count_chars2.cpp).
 
-- **Counting the words is tricky**. The insight of counting the whitespace
-  *between* words is not completely obvious, and so that's a good reason to
-  explain it in the code with comments.
+- **Counting words is tricky**. The insight of counting the whitespace *between*
+  words is not completely obvious, and so that's a good reason to explain it in
+  the code with comments. This tricks works well in practice, but it is not
+  perfect. For example, `hoi polloi` is one English word, but it is counted as
+  two because of the space. And text like `one...two...three` is counted as
+  *one* word because it has no spaces.
+
+- **[count_chars_start.cpp](count_chars_start.cpp) is a good starting point for
+  writing other character-by-character utilities**. For instance, starting it
+  with it you could write a program that adds line numbers to the start of each
+  line, or strips-out source code comments, ...
+
 
 ## Extra
 
