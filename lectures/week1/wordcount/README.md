@@ -46,9 +46,9 @@ your own version of `wc` that does this:
 
 ### Sample Solution
 
-[count_chars1.cpp](count_chars1.cpp) is a pretty good solution to the problem.
+[count_chars.cpp](count_chars.cpp) is a pretty good solution to the problem.
 
-Note the following about [count_chars1.cpp](count_chars1.cpp):
+Note the following about [count_chars.cpp](count_chars.cpp):
 
 - **It is short and readable**. Programmers don't want to have to read a lot of
   messy code.
@@ -56,14 +56,6 @@ Note the following about [count_chars1.cpp](count_chars1.cpp):
 - **It's pretty efficient in both time and memory**. It only reads the file
   once, and no matter how how much input its scanning it uses the same tiny
   amount of memory.
-
-- **It uses global variables to keep track of the counts**. In general, you
-  should *not* use global variables because *any* code in the program could
-  read/write them, and that makes it difficult to be sure what their values are
-  at any particular time. But, this program is a single function that is
-  relatively short and simple, and so there is not much possible harm in making
-  the counts global. If we were to later add more features, then the global
-  variables should be replaced, e.g. see [count_chars2.cpp](count_chars2.cpp).
 
 - **Counting words is tricky**. The insight of counting the whitespace *between*
   words is not completely obvious, and so that's a good reason to explain it in
@@ -75,32 +67,13 @@ Note the following about [count_chars1.cpp](count_chars1.cpp):
 - **[count_chars_start.cpp](count_chars_start.cpp) is a good starting point for
   writing other character-by-character utilities**. For instance, starting it
   with it you could write a program that adds line numbers to the start of each
-  line, or strips-out source code comments, ...
+  line, or strips-out source code comments, etc. The program
+  [line_check.cpp](line_check.cpp) starts from the file, and is a program that
+  checks if a file has any lines longer than 100 characters.
 
 
 ## Extra
 
-To help understand object-oriented programming, here is a step-by-step
-modification of [count_chars1.cpp](count_chars1.cpp) into an object-oriented
-style. The final version, [count_chars7.cpp](count_chars7.cpp), counts
-characters in any number of files, and still has quite readable source code:
-
-- [count_chars1.cpp](count_chars1.cpp): Non-objected oriented word count
-  program.
-
-- [count_chars2.cpp](count_chars2.cpp): Global variables replaced by a `struct`.
-
-- [count_chars3.cpp](count_chars3.cpp): `fstream` used to read file from the
-  command-line.
-
-- [count_chars4.cpp](count_chars4.cpp): File name read from command-line using
-  `argc` and `argv`.
-
-- [count_chars5.cpp](count_chars5.cpp): `fstream` object moved to inside the
-  `struct`.
-
-- [count_chars6.cpp](count_chars6.cpp): Uses a *constructor* to initialize
-  `Count` objects.
-
-- [count_chars7.cpp](count_chars7.cpp): Re-write of `main` to allow for multiple
-  files to be passed as arguments.
+[count_chars.cpp](count_chars.cpp) could be extended in many different ways. See
+[this code](opp_version/) for an example of to make it more general-purpose and
+object-oriented.
