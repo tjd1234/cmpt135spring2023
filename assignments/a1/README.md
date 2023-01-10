@@ -26,7 +26,7 @@ Should print this:
 ```
 "hello"
 "goodbye"
-"Aloha!"
+""Aloha!""
 """
 ""
 ```
