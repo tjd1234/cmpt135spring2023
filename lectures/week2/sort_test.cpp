@@ -11,14 +11,18 @@
 
 using namespace std;
 
-// insertion sort (taken from some random website) returns a copy of s with its
-// characters in sorted order, e.g. insertion_sort("apple") returns "aelpp".
+//
+// insertion sort (taken from the web) 
+//
+// returns a copy of s with its characters in sorted order, e.g.
+// insertion_sort("apple") returns "aelpp".
+//
 string insertion_sort(const string& s) {
     string result = s;
     for (int i = 1; i < result.size(); i++) {
         char c = result[i];
-        int j = i - 1;  // correct
-        // int j = i - 2;  // incorrect, for testing
+        // int j = i - 1;  // correct
+        int j = i - 2;  // incorrect, for testing
         while (j >= 0 && result[j] > c) {
             result[j+1] = result[j];
             j--;
@@ -144,11 +148,11 @@ string random_string(int maxlen = 20) {
     return result;
 }
 
-void rand_str_test() {
-    for(int i = 0; i < 10; i++) {
-        cout << quote(random_string()) << "\n";
-    }
-}
+// void rand_str_test() {
+//     for(int i = 0; i < 10; i++) {
+//         cout << quote(random_string()) << "\n";
+//     }
+// }
 
 void random_style_testing() {
     cout << "random_style_testing, 100 random test cases ...\n";
@@ -169,9 +173,9 @@ void random_style_testing() {
 }
 
 int main() {
-    if_style_testing();
+    // if_style_testing();
     // assert_style_testing();
-    table_based_testing();
-    property_style_testing();
+    // table_based_testing();
+    // property_style_testing();
     random_style_testing();
 }

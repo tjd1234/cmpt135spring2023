@@ -51,7 +51,7 @@ cout << v << "\n";  // prints: {"art", "booth", "C"}
 To make that work we must *overload* `operator<<` like this:
 
 ```cpp
-vector<string> to_string(const vector<string>& v) {
+string to_string(const vector<string>& v) {
   //
   // ... you write the body ...
   //
@@ -66,7 +66,7 @@ ostream& operator<<(ostream& out,
 
 Implement the `to_string(v)` function so that `operator<<` works correctly.
 `to_string(v)` takes a `vector<string>` as input and returns a nicely formatted
-string as in the examples. The output of `to_string` should be the same format
+`string` as in the examples. The output of `to_string` should be the same format
 as C++ string vectors, so you could cut-and-paste the output directly into a C++
 program.
 
