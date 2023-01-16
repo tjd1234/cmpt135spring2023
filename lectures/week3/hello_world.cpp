@@ -12,6 +12,13 @@
 
 using namespace std;
 
+void demo() {
+    double* p = new double(10.1);
+    cout << *p << endl;
+    *p = 42.0;
+    cout << *p << endl;
+}
+
 int main() {
-    cout << "Hello World!\n";
+    demo();
 }

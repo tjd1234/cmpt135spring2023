@@ -229,8 +229,6 @@ void swap3_demo() {
     // x and y are swapped!
 }
 
-// - pointing outside of legal memory (e.g. going off the end of an array)
-
 int main() {
     different_address_demo();
     // dangling_pointer_demo1();

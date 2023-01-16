@@ -8,7 +8,7 @@ all your code into that file.
 ### Question 1
 
 Write a function called `quote(s)` that returns a copy of the string `s`
-surrounded by double quotes. If `s` already starts and ends with double quotes,
+surrounded by double quotes. If `s` already starts *and* ends with double quotes,
 then return an unchanged copy.
 
 For example, this:
@@ -17,6 +17,7 @@ For example, this:
 cout << quote("hello")      << "\n"
      << quote("goodbye")    << "\n"
      << quote("\"Aloha!\"") << "\n"
+     << quote("toodles\"")  << "\n"
      << quote("\"")         << "\n" 
      << quote("")           << "\n";
 ```
@@ -26,7 +27,8 @@ Should print this:
 ```
 "hello"
 "goodbye"
-""Aloha!""
+"Aloha!"
+"toodles""
 """
 ""
 ```
@@ -36,6 +38,26 @@ that *automatically* tests your `quote` function. Use `assert` or if-statements
 to do the testing, and test the above examples, as well as a few other examples
 that you make up. Be thorough --- your function should work for all valid
 inputs, not just the ones in the examples.
+
+**Note** Due to the confusion caused by earlier incorrect examples for `quote`,
+here is a test function you can use in your assignment to check the correct of
+your quote function:
+
+```cpp
+void quote_test() {
+    cout << "testing quote ... ";
+    assert(quote("a"      ) == "\"a\""   );
+    assert(quote("ab"     ) == "\"ab\""  );
+    assert(quote("\"a\""  ) == "\"a\""   );
+    assert(quote("\"ab\"" ) == "\"ab\""  );
+    assert(quote("a\"b"   ) == "\"a\"b\"");
+    assert(quote("\"a"    ) == "\"\"a\"" );
+    assert(quote("a\""    ) == "\"a\"\"" );
+    assert(quote(""       ) == "\"\""    );
+    assert(quote("\""     ) == "\"\"\""  );
+    cout << "all tests passed\n";
+}
+```
 
 
 ### Question 2
