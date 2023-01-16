@@ -66,6 +66,24 @@ void assert_style_testing() {
     cout << "finished assert_style_testing: all tests passed\n";
 }
 
+
+// insertion sort
+// for example:
+//   vector<int> v = {3, 1, 2};
+//   insertion_sort(v);
+//   v is now {1, 2, 3}
+void insertion_sort(vector<int>& v) {
+    for (int i = 1; i < v.size(); i++) {
+        int c = v[i];
+        int j = i - 1;
+        while (j >= 0 && v[j] > c) {
+            v[j+1] = v[j];
+            j--;
+        }
+        v[j+1] = c;
+    }
+}
+
 string quote(const string& s) {
     return "\"" + s +  "\"";
 }
