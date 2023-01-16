@@ -40,8 +40,8 @@ that you make up. Be thorough --- your function should work for all valid
 inputs, not just the ones in the examples.
 
 **Note** Due to the confusion caused by earlier incorrect examples for `quote`,
-here is a test function you can use in your assignment to check the correct of
-your quote function:
+here is a test function you can use in your assignment to check the correctness
+of your `quote` function:
 
 ```cpp
 void quote_test() {
