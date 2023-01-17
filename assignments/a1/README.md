@@ -143,9 +143,13 @@ In the following questions, your task to implement a customized version of the
 Each question asks you to add a new feature, and you can do this is all in the
 same program. 
 
-Please note that *case matters* in the input strings, e.g. `-s` and `-S` are
-treated as *different* strings, and so `-S` would be an invalid flag.
+Please note the following:
 
+- *Case matters* in the input strings, e.g. `-s` and `-S` are treated as
+  *different* strings, and so `-S` would be an invalid flag.
+- A flag, like `-s`, is only treated as a flag if it is the *first* string
+  passed to your `myecho`. Otherwise, if it's not the first string, it's treated
+  like a regular word and printed normally.
 
 ### Question 3
 
@@ -264,7 +268,7 @@ x y z
 ... prints the help message ...
 ```
 
-Notice that there is *no* space after the last string.
+Notice that in the quoted strings there is *no* space after the last string.
 
 ### Question 7
 
@@ -357,7 +361,7 @@ single-character flags are allowed, but ignored. For example:
 If `-h` is one of the flags, it *always* takes precedence (and any other
 flags/strings are ignored).
 
-If `-runtests` is the *first* string, then the tests are run and any other
+If `-runtests` is the *first* string, then the tests are run and any following
 flags/strings are ignored. For example:
 
 ```bash
@@ -408,8 +412,7 @@ Error, unknown flag: -Q
   is easy to test and easy to read is more important than squeezing out every
   last drop of performance (you can improve the performance later).
 
-- The file [test.sh](test.sh) contains a [Fish](https://fishshell.com/) script
-  that you can run like this:
+- The file [test.sh](test.sh) contains a script that you can run like this:
 
   ```bash
   > ./test.sh
@@ -417,7 +420,14 @@ Error, unknown flag: -Q
   ```
 
   Sample correct output is in the file [test.out](test.out). You can use this to
-  help test your program.
+  help test your program. For instance in BASH (the default shell on Ubuntu) you
+  can type this command to compare the output of your program with the correct
+
+  ```bash
+  > ./test.sh > out.txt
+  > diff out.txt test.out
+  ... no output means your program produced the correct output ...
+  ```
 
 ## Marking Scheme
 
