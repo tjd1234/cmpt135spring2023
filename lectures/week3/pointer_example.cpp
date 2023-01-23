@@ -12,7 +12,7 @@
 
 using namespace std;
 
-void demo() {
+void demo1() {
     double* p = new double(10.1);
     cout << *p << endl;
     *p = 42.0;
@@ -20,6 +20,32 @@ void demo() {
     delete p;
 }
 
+void print(int* arr, int size) {
+    cout << "{";
+    for (int i = 0; i < size; i++) {
+        if (i > 0) cout << ", ";
+        cout << arr[i];
+    }
+    cout << "}";
+}
+
+void demo2() {
+    // get an array of 10 ints
+    // []-brackets must be used to allocate an array
+    int* arr = new int[10];
+
+    // initialize all locations of arr to 0
+    for (int i = 0; i < 10; i++) {
+        arr[i] = 0;
+    }
+
+    print(arr, 10);
+
+    // must delete using delete[], because arr was allocated using new int[10]
+    delete[] arr;
+}
+
 int main() {
-    demo();
+    // demo1();
+    demo2();
 }

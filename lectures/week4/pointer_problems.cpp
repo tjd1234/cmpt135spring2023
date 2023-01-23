@@ -138,10 +138,10 @@ void double_deletion_demo2() {
     int* q = p;            // q points to the same thing as p
 
     // use p and q, no problems
-    cout << " p: " << p << "\n";
+    cout << " p: " << p  << "\n";
     cout << "*p: " << *p << "\n";
 
-    cout << " q: " << q << "\n";
+    cout << " q: " << q  << "\n";
     cout << "*q: " << *q << "\n";
 
 
