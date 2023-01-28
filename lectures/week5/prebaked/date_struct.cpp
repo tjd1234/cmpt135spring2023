@@ -79,7 +79,7 @@ void test_date_ptr() {
     cout << "*d = " << *d << "\n";
 
     delete d;                        // remember to de-allocate dynamic 
-}                                    // mmeory
+}                                    // memory
 
 int main() {
     test_date();
