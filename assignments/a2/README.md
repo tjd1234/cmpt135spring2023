@@ -190,9 +190,9 @@ and `private` whenever possible.
 
    arr.append(arr);          // {"apple", "orange", "pear", "banana",
                              //  "apple", "orange", "pear", "banana"}
-  ```
+   ```
 
-  Write two test functions, once for each version of `append`.
+   Write two test functions, once for each version of `append`.
 
 10. Implement the `void` mutating method `capitalize_all()` that *capitalizes*
     all the strings in `str_vec` that can be capitalized. A string can be
