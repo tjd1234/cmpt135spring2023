@@ -264,22 +264,22 @@ and `private` whenever possible.
       `str_vec` `a` and the `str_vec` `b` *don't* have the same elements in
       the same order, and `false` otherwise
 
-   Example:
+    Example:
 
-   ```cpp
-   str_vec a(3, "cat"); 
-   str_vec b(3, "cat");
+    ```cpp
+    str_vec a(3, "cat"); 
+    str_vec b(3, "cat");
 
-   if (a == b) cout << "same\n";       // prints "same"
-   if (a != b) cout << "different\n";  // prints nothing
+    if (a == b) cout << "same\n";       // prints "same"
+    if (a != b) cout << "different\n";  // prints nothing
 
-   a.set(0, "feline");
+    a.set(0, "feline");
 
-   if (a == b) cout << "same\n";       // prints nothing
-   if (a != b) cout << "different\n";  // prints "different"
-   ```
+    if (a == b) cout << "same\n";       // prints nothing
+    if (a != b) cout << "different\n";  // prints "different"
+    ```
 
-   Write test functions for both `operator==` and `operator!=`.
+    Write test functions for both `operator==` and `operator!=`.
 
 15. Implement a mutating method `sort()` that re-arranges the elements of a
     `str_vec` into alphabetical order.
