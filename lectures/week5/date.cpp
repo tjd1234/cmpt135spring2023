@@ -13,10 +13,13 @@ private:
 
 public:
     // constructor
-    Date(int d, int m, int y) {
-        day = d;
-        month = m;
-        year = y;
+    Date(int d, int m, int y)
+    : day{d}, month{m}, year{y}  // initializer list
+    { }
+
+    // destructor
+    ~Date() {
+        cout << "Date destructor called\n";
     }
 
     // getters
@@ -32,6 +35,21 @@ public:
         return year;
     }
 
+    // setters
+    bool set_day(int d) {
+        if (d >= 1 || d <= 31) {
+            day = d;
+            return true;
+        }
+        return false;
+    }
+
+    void set_dmy(int d, int m, int y) {
+        day = d;
+        month = m;
+        year = y;
+    }
+
     void print() const {  // const method
         cout << "(" << day
              << ", " << month
@@ -44,7 +62,7 @@ public:
         cout << "\n";
     }
 
-};
+}; // class Date
 
 
 void test_date() {
@@ -52,14 +70,6 @@ void test_date() {
     Date d{1, 11, 2000}; // November 1, 2000
     cout << "d = ";
     d.println();
-    
-    // d.day = 14;          // you can change the date
-    // cout << "d = ";
-    // d.println();
-
-    // d.year = -343;       // nothing to stop nonsensical data!
-    // cout << "d = ";
-    // d.println();
 }
 
 // Same as test_date(), but using dynamic memory instead.
@@ -68,14 +78,6 @@ void test_date_ptr() {
     Date* d = new Date{1, 11, 2000}; // November 1, 2000
     cout << "*d = ";
     d->println();
-
-    // d->day = 14;     // you can change the date
-    // cout << "*d = ";
-    // d->println();
-
-    // d->year = -343;  // nothing to stop nonsensical data!
-    // cout << "*d = ";
-    // d->println();
 
     delete d;
 }
