@@ -3,12 +3,14 @@
 //
 // This is the same as double_list.cpp, but with a few more features:
 //
-// - to_string() method for nicer and more flexible printing
-// - overloaded operator<< for easier printing with cout
-// - overloaded operator[] for getting and setting; this lets us replace calls
-//   to get and set with the more familiar []-bracket
-// - an assignment operator
-// - operator== for comparing two double_lists
+// - A to_string() method for nicer and more flexible printing.
+// - Overloaded operator<< for easier printing with cout.
+// - Overloaded operator[] for getting and setting individual values, e.g. it
+//   lets us write a[i] = 5 and cout << a[i]
+// - An assignment operator. If a and b are double_lists, then you can assign b
+//   to a by writing a = b.
+// - operator== for comparing two double_lists, e.g. a == b true just when a and
+//   b have the same values.
 //
 
 #include "cmpt_error.h"
