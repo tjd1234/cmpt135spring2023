@@ -8,111 +8,161 @@
 using namespace std;
 
 struct double_list {
+// private members can only be accessed by could in double_list, and
+// cannot be accessed by code outside of double_list.
+private:
     double* arr;    // pointer to the underlying array
     int capacity;   // length of underlying array
     int size;       // # of elements from user's perspective
-};
 
+// public members can be accessed by any code.
+public:
+    // Default constructor: takes no input and makes an array of 
+    // size 0
+    double_list()
+    : double_list(0)  // constructor delegation
+    { }
 
-// Returns a new double_list of size 0 and capacity 10.
-double_list make_empty_double_list() {
-    double_list result;
-    result.capacity = 10;
-    result.arr = new double[result.capacity];
-    result.size = 0;
-    return result;
-}
-
-// prints lst to cout
-void print(double_list lst) {
-    cout << "\n";
-    cout << "lst.capacity = " << lst.capacity << ", "
-         << "lst.size = "     << lst.size     << "\n";
-    for (int i = 0; i < lst.size; i++) {
-        cout << "   lst.arr[" << i << "] = " << lst.arr[i] << "\n";
-    }
-}
-
-// De-allocate the underlying array of lst.
-void deallocate(double_list lst) {
-    delete[] lst.arr;
-}
-
-// Appends the number x to the right end of the array, increasing it's size by
-// 1. If necessary, it will also double the capacity.
-//
-// IMPORTANT: lst must be passed by reference since lst.size (and maybe also
-// lst.capacity) is changed. 
-//
-// IMPORTANT: The line delete[] lst.arr fails if lst.capacity is 0. To prevent
-// this, the make_double_empty_list must always sets the capacity to a value
-// greater than 0.
-void append_right(double_list& lst, double x) {
-    // double the capacity of array, if necessary
-    if (lst.size >= lst.capacity) { 
-        lst.capacity = 2 * lst.capacity;            // make a new array 
-        double* arr_new = new double[lst.capacity]; // twice the size 
-        
-        for(int i = 0; i < lst.size; i++) {  // copy elements 
-            arr_new[i] = lst.arr[i];         // into new one
+    // double_list has a constructor that must be called whenever 
+    // you create a new double_list. It ensures all the variables 
+    // are properly initialized.
+    double_list(int n)
+    : capacity(2*n + 1), size(n)  // initializer list
+    {
+        if (n < 0) 
+           cmpt::error("double_list(int n): n must be 0 or greater");
+        arr = new double[capacity];
+        for (int i = 0; i < size; i++) {
+            arr[i] = 0;
         }
-       
-        delete[] lst.arr;   // de-allocate the old array
-        lst.arr = arr_new;  // point to the new array
     }
-    lst.arr[lst.size] = x;
-    lst.size++;
+
+    // Copy constructor: makes a copy of another double_list. The 
+    // copy has the same size, capacity and values, but its own
+    // underlying array.
+    double_list(const double_list& other) 
+    : arr(new double[other.capacity]), 
+      capacity(other.capacity), 
+      size(other.size)
+    {
+        for (int i = 0; i < size; i++) {
+            arr[i] = other.arr[i];
+        }
+    }
+
+    void append_right(double x) {
+        if (size >= capacity) {
+            // double the capacity of the array
+
+            // make a new array about twice the size of the current
+            // one
+            capacity = 2 * capacity;
+            double* arr_new = new double[capacity];
+
+            // copy the elements from the old array into the new one
+            for(int i = 0; i < size; i++) {
+                arr_new[i] = arr[i]; 
+            }
+
+            // de-allocate the old array
+            delete[] arr;
+
+            // make lst.arr point to the new array
+            arr = arr_new;
+        }
+
+        // add x to the first unused location on the right end
+        arr[size] = x;
+        size++;
+    }
+
+    int get_size() const { return size; }
+
+    // A setter: set(i, x) assigns a copy of x to location i of the
+    // underlying array of lst.
+    void set(int i, double x) {
+        if (i < 0 || i >= size) cmpt::error("set: index out of bounds");
+        arr[i] = x;
+    }
+
+    // A getter: returns the value at index location i of the
+    // underlying array.
+    double get(int i) const {
+        if (i < 0 || i >= size) cmpt::error("get: index out of bounds");
+        return arr[i];
+    }
+    
+    // Notice that get(i) is used in the for-loop, as a 
+    // demonstration for how to call it.
+    void print() const {
+        cout << "lst capacity = " << capacity << ", "
+             << "lst size = "     << size     << "\n";
+        for (int i = 0; i < size; i++) {
+            cout << "lst.arr[" << i << "] = " << get(i) << "\n";
+        }
+    }
+
+    double sum() const {
+        double result = 0;
+        for (int i = 0; i < size; i++) {
+            result += arr[i];
+        }
+        return result;
+    }
+
+    void sort_ascending() {
+        std::sort(arr, arr + size);
+    }
+
+    // Destructor. Always called automatically when the object is
+    // de-allocated. The programmer cannot call it manually.
+    ~double_list() {
+        delete[] arr;
+    }
+}; // struct double_list
+
+double average(const double_list& lst) {
+    return lst.sum() / lst.get_size();
 }
 
-// returns the sum of all elements in lst
-double sum(double_list lst) {
-    double result = 0;
-    for(int i = 0; i < lst.size; i++) {
-        result += lst.arr[i];
+void sort_descending(double_list& lst) {
+    lst.sort_ascending();
+    // std::reverse(arr, arr + size);
+    int a = 0;
+    int b = lst.get_size() - 1;
+    while (a < b) {
+        double temp = lst.get(a); // temp = a
+        lst.set(a, lst.get(b));   // a = b
+        lst.set(b, temp);         // b = temp
+        a++;
+        b--;
     }
-    return result;
-}
-
-// set all elements of lst to fill_value
-void fill(double_list lst, int fill_value) {
-    for(int i = 0; i < lst.size; i++) {
-        lst.arr[i] = fill_value;
-    }
-}
-
-// std::sort is C++'s standard sorting function from the <algorithm> include.
-// The input to std::sort is a pointer to the first element of the underlying
-// array, and a pointer to one past the last element.
-void sort_ascending(double_list lst) {
-    std::sort(lst.arr, lst.arr + lst.size);
 }
 
 int main() {
-    double_list lst = make_empty_double_list();
-    
-    // add some numbers
-    append_right(lst, 6);
-    append_right(lst, -1);
-    append_right(lst, 2);
-    
-    // print their sum 
-    cout << "sum = " << sum(lst) << "\n";
-    
-    // sort from smallest to biggest
-    print(lst);
-    sort_ascending(lst);
-    print(lst);
+    double_list lst(0);
 
-    // fill with 5's
-    fill(lst, 5);
-    print(lst);
+    // set the first three numbers of lst to be: 0, 6, 2.5
+    lst.append_right(0);
+    lst.append_right(6);
+    lst.append_right(2.6);
 
-    // add 100 more numbers
-    for(int i = 0; i < 100; i++) {
-        append_right(lst, i);
-    }
-    print(lst);
+    // print lst, one number per line
+    lst.print();
 
-    // de-allocate the underlying array to avoid a memory leak
-    deallocate(lst);
+    // lst2 is a copy of lst
+    double_list lst2(lst);
+    lst2.print();
+
+    // print the sum and average
+    cout << "    sum = " << lst2.sum()    << "\n";
+    cout << "average = " << average(lst2) << "\n";
+
+    lst2.print();
+    lst2.sort_ascending();
+    lst2.print();
+    sort_descending(lst2);
+    lst2.print();
+
+    // destructors automatically called
 }
