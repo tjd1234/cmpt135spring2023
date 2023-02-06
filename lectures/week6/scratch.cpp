@@ -12,6 +12,13 @@
 
 using namespace std;
 
+void summarize(const vector<int>& v) {
+	for(int i = 0; i < v.size(); i++) {
+		cout << "v[" << i << "] = " << v[i] << "\n";
+	}
+	cout << "size: " << v.size() << "\n";
+}
+
 int main() {
     cout << "Hello World!\n";
 }
