@@ -1,71 +1,87 @@
 // int_vec.cpp
 
-#include <iostream>
-#include <vector>
-#include <string>
-#include <numeric>
 #include <algorithm>
 #include <cassert>
+#include <iostream>
+#include <numeric>
+#include <string>
+#include <vector>
 
 using namespace std;
 
-class int_vec : public vector<int> {
+class int_vec : public vector<int>
+{
     string name;
+
 public:
     // constructor
-    int_vec(const string& n)
-    : vector<int>(), name(n)
-    {  }
+    int_vec(const string &n)
+        : vector<int>(), name(n)
+    {
+    }
 
     // default constructor
     int_vec()
-    : vector<int>(), name("<no name>")
-    { }
+        : vector<int>(), name("<no name>")
+    {
+    }
 
     string get_name() const { return name; }
 
-    int sum1() const {
+    int sum1() const
+    {
         int result = 0;
-        for(int i = 0; i < size(); i++) {
+        for (int i = 0; i < size(); i++)
+        {
             result += (*this)[i]; // at(i)
         }
         return result;
     }
 
-    int sum2() const {
+    int sum2() const
+    {
         int result = 0;
-        for(int n : *this) result += n;
+        for (int n : *this)
+            result += n;
         return result;
     }
 
-    int sum3() const {
+    int sum3() const
+    {
         return accumulate(begin(), end(), 0);
     }
 
-    void sort_ascending() {
+    void sort_ascending()
+    {
         sort(begin(), end());
     }
 
-    void sort_descending() {
+    void sort_descending()
+    {
         sort_ascending();
         reverse(begin(), end());
     }
 }; // int_vec
 
-void summarize(const vector<int>& v) {
-	for(int i = 0; i < v.size(); i++) {
-		cout << "v[" << i << "] = " << v[i] << "\n";
-	}
-	cout << "size: " << v.size() << "\n";
+void summarize(const vector<int> &v)
+{
+    for (int i = 0; i < v.size(); i++)
+    {
+        cout << "v[" << i << "] = " << v[i] << "\n";
+    }
+    cout << "size: " << v.size() << "\n";
 }
 
-void fancy_summarize(const int_vec& v) {
-	cout << v.get_name() << ":\n";
-	for(int n : v) cout << "   " << n << "\n";
-	cout << "sum = " << v.sum1() << "\n";
+void fancy_summarize(const int_vec &v)
+{
+    cout << v.get_name() << ":\n";
+    for (int n : v)
+        cout << "   " << n << "\n";
+    cout << "sum = " << v.sum1() << "\n";
 }
 
-int main() {
+int main()
+{
     int_vec v("Table 1");
     v.push_back(2);
     v.push_back(1);
