@@ -4,6 +4,7 @@
 #include "cmpt_error.h"
 #include <iostream>
 #include <cmath>
+#include "RGB_color.h"
 
 using namespace std;
 

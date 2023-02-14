@@ -12,8 +12,8 @@
 //
 // Now you can you can run the program:
 //
-//    > ./color_test
-//    ...
+//     > ./color_test
+//     ...
 //
 
 #include "RGB_color.h"
