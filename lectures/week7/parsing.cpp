@@ -42,7 +42,7 @@ void eval_demo() {
     cout << "eval(\"  8+    3   \") = " << eval("  8+    3   ") << endl;
 
     // some inputs cause stoi to throw an exception ...
-    // cout << eval(" two + 3");
+    cout << eval("+3");
     // cout << eval(" 2 + 39043090300473");
 }
 
@@ -73,4 +73,5 @@ void test_safe() {
 
 int main() {
     eval_demo();
+    // test_safe();
 }
