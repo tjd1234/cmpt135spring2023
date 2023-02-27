@@ -636,10 +636,10 @@ The output of `write_to_file` should be formatted in exactly the same style as
 using `read_from_file`.
 
 Similarly, uncomment `write_to_html_file(filename)` in
-[Todo_list_base.h](Todo_list_base.h). When called, it firsts sorts the items by
-due date (earliest to latest), and then writes each of those due dates to
-`filename` using their `to_html_item`. Also, the first line of the file is the
-HTML tag `<ul>`, and the last line is `</ul>`.
+[Todo_list_base.h](Todo_list_base.h). When called, it first sorts the items by
+due date (earliest to latest), and then writes each of them to `filename` using
+their `to_html_item`. Also, the first line of the file is the HTML tag `<ul>`,
+and the last line is `</ul>`.
 
 Add `#include <algorithm>` to the list of includes at the top of your
 [a3.cpp](a3.cpp) so that you can use the standard C++ `sort` function.
@@ -652,7 +652,7 @@ void step_4_3_test()
     Todo_list list;
 
     list.add_item(Todo_item("Buy tinsel", Date(20, 25, 2018)));
-    list.add_item(Todo_item("21/04/2018! Weave basket"));
+    list.add_item(Todo_item("21/04/2018@ Weave basket"));
     list.add_item(Todo_item("Carve pumpkin", Date(31, 10, 2018)));
 
     list.write_to_file("step_4_3_output.txt");
@@ -679,7 +679,7 @@ void step_4_3_test()
     assert(list2.get_item(2).get_due_date().get_year() == 2018);
 
     assert(list2.get_item(0).is_done() == false);
-    assert(list2.get_item(1).is_done() == false);
+    assert(list2.get_item(1).is_done() == true);
     assert(list2.get_item(2).is_done() == false);
 
     cout << "All step_4_3 tests run: check the HTML results by hand!\n";
