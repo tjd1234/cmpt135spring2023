@@ -56,7 +56,7 @@ public:
 
 In the private part of `Date`, add variables for representing a day (1 to 31),
 month (1 to 12), and year (0 or higher). Then add all the getters and setters
-listed in `Date_base`.
+listed in `Date_base` (they're all `public`).
 
 In the public part of `Date`, add a constructor that takes a day, month, and
 year as input, and uses an *initializer list* to initialize the private
@@ -161,7 +161,7 @@ that broke some previous code.
 **Note** Don't start this step until you've finished the previous one.
 
 Uncomment the `to_string()` method in [Date_base.h](Date_base.h). The string
-returned by `to_string` with this *exact* format: "dd/mm/yyyy". For example, if
+returned by `to_string` has this *exact* format: "dd/mm/yyyy". For example, if
 your date object represents May 19 2001, then `to_string` returns
 `"19/05/2001"`. The returned string will always be exactly 10 characters long.
 The day and month will always be exactly two digits, and the year will always be
@@ -308,6 +308,8 @@ called `Todo_item` that inherits from the `Todo_item_base` class in
 [Todo_item_base.h](Todo_item_base.h):
 
 ```cpp
+// a3.cpp
+
 // ...
 #include "Todo_item_base.h"
 
@@ -494,14 +496,14 @@ Test what you've done by adding this function to [a3.cpp](a3.cpp):
 ```cpp
 void step_3_5_test()
 {
-    Todo_item a("01/01/0000! buy a hamster");
+    Todo_item a("01/01/0000@ buy a hamster");
     assert(a.get_description() == "buy a hamster");
     assert(a.get_due_date().get_day() == 1);
     assert(a.get_due_date().get_month() == 1);
     assert(a.get_due_date().get_year() == 0);
     assert(a.is_done());
 
-    Todo_item b("01/01/2018@ sell hamster");
+    Todo_item b("01/01/2018! sell hamster");
     assert(b.get_description() == "sell hamster");
     assert(b.get_due_date().get_day() == 1);
     assert(b.get_due_date().get_month() == 1);
@@ -595,6 +597,9 @@ Each line of `filename` is formatted exactly the same as the output of
 `Todo_item::to_string`. [todo_example.txt](todo_example.txt) is an example of
 such a file. It contains 11 `Todo_item`s, and is used in the tests below.
 
+Add `#include <fstream>` to the list of includes at the top of your
+[a3.cpp](a3.cpp).
+
 Test what you've done by adding this function to [a3.cpp](a3.cpp):
 
 ```cpp
@@ -604,7 +609,7 @@ void step_4_2_test()
     list.read_from_file("todo_example.txt");
     assert(list.size() == 11);
 
-    // 13/02/2023@ optometrist in afternoon
+    // 13/02/2023! optometrist in afternoon
     Todo_item eyes("optometrist in afternoon", Date(13, 2, 2023));
 
     Todo_item item = list.get_item(0);
@@ -635,6 +640,9 @@ Similarly, uncomment `write_to_html_file(filename)` in
 due date (earliest to latest), and then writes each of those due dates to
 `filename` using their `to_html_item`. Also, the first line of the file is the
 HTML tag `<ul>`, and the last line is `</ul>`.
+
+Add `#include <algorithm>` to the list of includes at the top of your
+[a3.cpp](a3.cpp) so that you can use the standard C++ `sort` function.
 
 Test what you've done by adding this function to [a3.cpp](a3.cpp):
 
@@ -670,7 +678,7 @@ void step_4_3_test()
     assert(list2.get_item(2).get_due_date().get_month() == 25);
     assert(list2.get_item(2).get_due_date().get_year() == 2018);
 
-    assert(list2.get_item(0).is_done() == true);
+    assert(list2.get_item(0).is_done() == false);
     assert(list2.get_item(1).is_done() == false);
     assert(list2.get_item(2).is_done() == false);
 
@@ -690,8 +698,8 @@ called `part5()` that reads the file [part5_todos.txt](part5_todos.txt) and then
 prints this:
 
 ```
-done: 524
-not done: 476
+done: 476
+not done: 524
 oldest: 05/01/2018@ freeze-dry magnet-shaped green orange
 newest: 28/12/2023@ defrost large yellow cherry
 ```

@@ -2,6 +2,7 @@
 
 #include "cmpt_error.h"
 #include <iostream>
+#include <cassert>
 
 
 using namespace std;

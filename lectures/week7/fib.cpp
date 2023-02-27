@@ -6,6 +6,8 @@
 
 using namespace std;
 
+// 1 1 2 3 5 8 13
+
 int fib(int n) {
     cmpt::Trace trace("fib(" + to_string(n) + ")");
     if (n == 0) return 1;       // base case 1
