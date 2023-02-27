@@ -651,7 +651,7 @@ void step_4_3_test()
 {
     Todo_list list;
 
-    list.add_item(Todo_item("Buy tinsel", Date(20, 25, 2018)));
+    list.add_item(Todo_item("Buy tinsel", Date(20, 12, 2018)));
     list.add_item(Todo_item("21/04/2018@ Weave basket"));
     list.add_item(Todo_item("Carve pumpkin", Date(31, 10, 2018)));
 
@@ -675,11 +675,11 @@ void step_4_3_test()
     assert(list2.get_item(1).get_due_date().get_year() == 2018);
 
     assert(list2.get_item(2).get_due_date().get_day() == 20);
-    assert(list2.get_item(2).get_due_date().get_month() == 25);
+    assert(list2.get_item(2).get_due_date().get_month() == 12);
     assert(list2.get_item(2).get_due_date().get_year() == 2018);
 
-    assert(list2.get_item(0).is_done() == false);
-    assert(list2.get_item(1).is_done() == true);
+    assert(list2.get_item(0).is_done() == true);
+    assert(list2.get_item(1).is_done() == false);
     assert(list2.get_item(2).is_done() == false);
 
     cout << "All step_4_3 tests run: check the HTML results by hand!\n";
