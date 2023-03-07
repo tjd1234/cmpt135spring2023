@@ -150,6 +150,10 @@ int fib2(int n)
     }
 }
 
+//
+// Recursion on vectors
+//
+
 int sum(const vector<int>& v, int begin) {
     if (begin == v.size()) {
         return 0;
@@ -182,11 +186,13 @@ int sum_even(const vector<int>& v) {
 int main()
 {
     // a();
-    b(1);
+    // b(1);
     // c(0);
     // d(10);
     // say("hiya!", 10);
 
     // count_down(10);
     // count_up(10);
+
+    cout << S(5) << "\n";
 }

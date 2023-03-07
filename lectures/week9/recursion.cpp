@@ -4,8 +4,6 @@
 
 using namespace std;
 
-// Question 1
-//
 // Without using any loops, write a function that prints
 // "Hello!" forever.
 
@@ -28,40 +26,3 @@ int main()
 {
     a(7);
 }
-
-
-
-
-
-
-
-
-
-
-// Question 2
-//
-// Without using any loops, write a function that prints
-// "Hello!" forever, and each hello starts with its count:
-//
-// 1: Hello!
-// 2: Hello!
-// 3: Hello!
-// ...
-
-
-// Question 3
-//
-// Without using any loops, write a function that prints "hello!" at most 10
-// times. Use a passed-in int parameter to keep track of how many times it is
-// called.
-
-// Question 4
-//
-// Without using any loops, write a function that prints "hello!" n times. Pass in
-// n as a parameter.
-
-// Question 5
-//
-// Without using any loops, write a function say(s, n) that prints the string s
-// n times. 
-
