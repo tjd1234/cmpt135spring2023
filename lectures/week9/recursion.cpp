@@ -22,7 +22,14 @@ void say(const string& s, int n) {
     say(s, n-1);
 }
 
+void f(int n) {
+    if (n <= 0) return;
+    a(n-1);
+    a(n-1);
+    cout << n << ": Hello!\n";
+}
+
 int main()
 {
-    a(7);
+    say("dog", 3);
 }
