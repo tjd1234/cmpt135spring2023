@@ -183,6 +183,27 @@ int sum_even(const vector<int>& v) {
     return sum_even(v, 0);
 }
 
+void print_vec(const vector<int>& v, int begin) {
+    if (begin == v.size()) return;
+    cout << v[begin] << "\n";
+    print_vec(v, begin + 1);
+}
+
+void print_vec(const vector<int>& v) {
+    print_vec(v, 0);
+}
+
+// MOMS is a "recursive acronym"
+// MOMS = MOMS Offering MOMS Support
+string moms(int n) {
+    if (n == 1) {
+        return "moms offering moms support";
+    } else {
+        string sub = moms(n - 1);
+        return sub + " offering " + sub + " support";
+    }
+}
+
 int main()
 {
     // a();
@@ -194,5 +215,8 @@ int main()
     // count_down(10);
     // count_up(10);
 
-    cout << S(5) << "\n";
+    // cout << S(5) << "\n";
+
+    vector<int> v = {4, 1, 2, 6};
+    print_vec(v);
 }

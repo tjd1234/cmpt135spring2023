@@ -47,7 +47,7 @@ void sum_of_squares_test();
 // Post-condition:
 //    Returns the nth number of the sequence the sequence defined as follows.
 //    The first number is 3, and every number after that is twice the number
-//    before it plus 1. The first few numbers of the sequence are 1, 3, 7, 15,
+//    before it plus 1. The first few numbers of the sequence are 3, 7, 15,
 //    31, and so on.
 // Constraints:
 //    Must be implemented using recursion (and no loops). You can write helper

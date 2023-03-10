@@ -11,13 +11,13 @@ using namespace std;
 
 // returns the sum of v[begin], v[begin+1], ... , v[n - 1]
 // n is the size of v
-int sum(const vector<int> &v, int begin)
+int sum(const vector<int>& v, int begin)
 {
-    if (begin == v.size())
+    if (begin == v.size()) // base case
     {
         return 0;
     }
-    else
+    else // recursive case
     {
         return v[begin] + sum(v, begin + 1);
     }
@@ -25,7 +25,7 @@ int sum(const vector<int> &v, int begin)
 
 // returns the sum of v[0], v[1], ... , v[n - 1]
 // n is the size of v
-int sum(const vector<int> &v)
+int sum(const vector<int>& v)
 {
     return sum(v, 0);
 }
