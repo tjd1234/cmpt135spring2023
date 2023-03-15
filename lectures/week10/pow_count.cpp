@@ -120,43 +120,60 @@ void test_power()
 //
 int mult_count = 0;
 
-int power_recur_fast_count(int a, int n) {
+int power_recur_fast_count(int a, int n)
+{
     // check pre-condition
-    if (n < 0) cmpt::error("exponent must be non-negative");
+    if (n < 0)
+        cmpt::error("exponent must be non-negative");
 
-    if (a == 0 && n == 0) return 1;
-    if (a == 0 && n != 0) return 0;
-    if (a != 0 && n == 0) return 1;
-    if (a == 1) return 1;
+    if (a == 0 && n == 0)
+        return 1;
+    if (a == 0 && n != 0)
+        return 0;
+    if (a != 0 && n == 0)
+        return 1;
+    if (a == 1)
+        return 1;
 
-    if (n % 2 == 0) {
-       int half = power_recur_fast_count(a, n / 2);
-       mult_count += 1;
-       cout << 0;           // print 0
-       return half * half;
-    } else {
-       int half = power_recur_fast_count(a, (n - 1) / 2);
-       mult_count += 2;
-       cout << 1;          // print 1
-       return a * half * half;
+    if (n % 2 == 0)
+    {
+        int half = power_recur_fast_count(a, n / 2);
+        mult_count += 1;
+        cout << 0;
+        return half * half;
+    }
+    else
+    {
+        int half = power_recur_fast_count(a, (n - 1) / 2);
+        mult_count += 2;
+        cout << 1;
+        return a * half * half;
     }
 }
 
-void power_test(int a, int n) {
+void power_test(int a, int n)
+{
     mult_count = 0;
     power_recur_fast_count(a, n);
-	cout << " " << a << "^" << n << ", " 
+    cout << " " << a << "^" << n << ", "
          << mult_count << " multiplications\n";
 }
 
-void do_power_test() {
-    for(int i = 0; i <= 20; ++i) {
+void do_power_test(int n)
+{
+    for (int i = 0; i <= n; ++i)
+    {
         power_test(2, i);
     }
 }
 
-int main()
+int main(int argc, char *argv[])
 {
-    // test_power();
-    do_power_test();
+    if (argc != 2)
+    {
+        cout << "Usage: " << argv[0] << " n\n";
+        return 1;
+    }
+    int n = stoi(argv[1]);
+    do_power_test(n);
 }

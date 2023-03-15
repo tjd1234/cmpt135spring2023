@@ -169,6 +169,12 @@ void test_max()
 // Code for counting mi = i
 //
 
+//
+// total_count is a global variable to count how many times mi = i is executed;
+// usually we want to avoid global variables, but in this case it's convenient
+//
+int total_count = 0;
+
 // prints how times mi = i is executed
 int index_of_max_count(const vector<int> &v)
 {
@@ -187,35 +193,42 @@ int index_of_max_count(const vector<int> &v)
         }
         i++;
     }
-    cout << "mi_assign_i_count = " << mi_assign_i_count << "\n";
+
+    cout << "# times mi = i called: " << mi_assign_i_count << "\n";
+    total_count += mi_assign_i_count;
     return mi;
 }
 
-// returns a vector of n random ints
-vector<int> rand_vec(int n)
+void rand_vec(vector<int> &v)
 {
-    vector<int> result(n);
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < v.size(); i++)
     {
-        result[i] = rand(); // rand() returns a random int
-    }                       // from 0 to RAND_MAX
-    return result;
+        v[i] = rand(); // rand() returns a random int
+    }                  // from 0 to RAND_MAX
 }
 
-void max_count_test()
+void max_count_test(int n)
 {
     srand(time(NULL)); // seed the random number generator
-    const int n = 10;
+    total_count = 0;   // reset the total count
+    vector<int> v(n);
     cout << "n = " << n << "\n";
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < 10; i++)
     {
-        vector<int> v = rand_vec(n);
+        rand_vec(v);
         index_of_max_count(v);
     }
+    cout << "\naverage count = " << total_count / 10 << "\n";
 }
 
-int main()
+int main(int argc, char *argv[])
 {
-    test_max();
-    // max_count_test();
+    // test_max();
+    if (argc != 2)
+    {
+        cout << "Usage: " << argv[0] << " n\n";
+        return 1;
+    }
+
+    max_count_test(stoi(argv[1]));
 }
