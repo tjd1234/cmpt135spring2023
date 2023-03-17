@@ -79,6 +79,40 @@ void test_linear_search1a()
     cout << " ... test_linear_search1a done: all tests passed\n";
 }
 
+// linear search in reverse order, i.e. it searches for x start at the end of v
+// and then moves to the beginning
+int reverse_linear_search(const vector<int> &v, int x)
+{
+    for (int i = v.size() - 1; i >= 0; i--)
+    {
+        if (x == v[i])
+            return i;
+    }
+    return -1;
+}
+
+void test_reverse_linear_search()
+{
+    cout << "Calling test_reverse_linear_search ...\n";
+    vector<int> v = {5, 2, 1, 3, 4};
+    assert(reverse_linear_search(v, 1) == 2);
+    assert(reverse_linear_search(v, 2) == 1);
+    assert(reverse_linear_search(v, 3) == 3);
+    assert(reverse_linear_search(v, 4) == 4);
+    assert(reverse_linear_search(v, 5) == 0);
+    assert(reverse_linear_search(v, 6) == -1);
+
+    v = {};
+    assert(reverse_linear_search(v, 1) == -1);
+
+    v = {1};
+    assert(reverse_linear_search(v, 1) == 0);
+    assert(reverse_linear_search(v, -2) == -1);
+    assert(reverse_linear_search(v, 2) == -1);
+
+    cout << " ... test_reverse_linear_search done: all tests passed\n";
+}
+
 // Pre-condition:
 //    x is in v (i.e. there exists some i such that v[i] == x)
 // Post-condition:
@@ -114,16 +148,15 @@ int linear_search2(vector<int> &v, int x)
 
     // at this point we know v[n-1] != x
     int last = v[n - 1];       // save the last element
-    v[n - 1] = x;              // make the last element
-                               // equal to x
+    v[n - 1] = x;              // set the last element to x
+                               
     int i = location_of(v, x); // search for x
-                               //
-    v[n - 1] = last;           // now put the true last
-                               // element back
-    if (i == n - 1)            // if the first x was the
-        return -1;             // one at the end,
+                               
+    v[n - 1] = last;           // put the last element back
+    if (i == n - 1)            // check which x was found
+        return -1; // x is not in v
     else
-        return i; // x is not in v
+        return i; 
 }
 
 void test_linear_search2()
@@ -164,8 +197,8 @@ void test_linear_search3()
 {
     cout << "Calling test_linear_search3 ...\n";
     vector<int> v = {5, 2, 1, 3, 4};
-    assert(linear_search3(v, 1, 0, v.size()-1) == 2);
-    assert(linear_search3(v, 2, 1, v.size()-2) == 1);
+    assert(linear_search3(v, 1, 0, v.size() - 1) == 2);
+    assert(linear_search3(v, 2, 1, v.size() - 2) == 1);
     assert(linear_search3(v, 3, 2, v.size()) == 3);
     assert(linear_search3(v, 4, 4, v.size()) == 4);
     assert(linear_search3(v, 5, 0, v.size()) == 0);
@@ -231,6 +264,7 @@ int main()
 {
     test_linear_search1();
     test_linear_search1a();
+    test_reverse_linear_search();
     test_linear_search2();
     test_linear_search3();
     test_linear_search3();
