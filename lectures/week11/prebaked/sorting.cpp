@@ -26,19 +26,6 @@ bool is_sorted(const vector<int> &v)
     return is_sorted(v, 0, v.size());
 }
 
-// bool is_sorted(const vector<int> &v)
-// {
-//     // note i starts at 1
-//     for (int i = 1; i < v.size(); i++)
-//     {
-//         if (!(v[i - 1] <= v[i]))
-//         {
-//             return false;
-//         }
-//     }
-//     return true;
-// }
-
 long insertion_sort_comp_count = 0;
 
 void insertion_sort(vector<int> &v)
@@ -374,6 +361,7 @@ void test_recursive_binary_search()
     vector<int> three = {2, 5, 7};
 
     assert(recursive_binary_search(5, empty) == -1);
+    
     assert(recursive_binary_search(5, one) == 0);
     assert(recursive_binary_search(2, one) == -1);
 
@@ -391,7 +379,7 @@ void test_recursive_binary_search()
     assert(recursive_binary_search(6, three) == -1);
     assert(recursive_binary_search(10, three) == -1);
 
-    cout << "... test_iterative_binary_search done: all tests passed\n";
+    cout << "... test_recursive_binary_search done: all tests passed\n";
 }
 
 // int main()
