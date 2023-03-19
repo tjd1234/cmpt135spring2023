@@ -10,7 +10,7 @@ using namespace std;
 //    none
 // Post-condition:
 //    Returns the smallest i >= 0 such that v[i] == x; or, if
-//    x is not anywhere in v, then -1 is returned
+//    x is not anywhere in v, then -1 is returned.
 int linear_search1(const vector<int> &v, int x)
 {
     for (int i = 0; i < v.size(); i++)
