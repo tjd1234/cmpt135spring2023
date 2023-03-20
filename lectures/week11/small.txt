@@ -1,0 +1,6 @@
+zoo
+ask
+cow
+bird
+nose
+dog

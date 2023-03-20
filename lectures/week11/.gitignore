@@ -1,2 +1,6 @@
 scratch
 sorting
+shuffle
+is_sorted
+insertion_sort
+mergesort
