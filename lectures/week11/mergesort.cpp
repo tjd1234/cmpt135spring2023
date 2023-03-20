@@ -67,63 +67,9 @@ void mergesort(vector<string> &v)
     v = merge(left, right);
 }
 
-// // Pre-condition:
-// //    is_sorted(v, begin, mid)
-// //    is_sorted(v, mid, end)
-// // Post-condition:
-// //    is_sorted(begin, end)
-// void merge(vector<string> &v, int begin, int mid, int end)
-// {
-//     int a = begin;
-//     int b = mid;
-//     vector<string> result(v);
-//     for (int i = begin; i < end; i++)
-//     {
-//         if (a >= mid)
-//         {
-//             result[i] = v[b];
-//             b++;
-//         }
-//         else if (b >= end)
-//         {
-//             result[i] = v[a];
-//             a++;
-//         }
-//         else if (v[a] < v[b])
-//         {
-//             result[i] = v[a];
-//             a++;
-//         }
-//         else
-//         {
-//             result[i] = v[b];
-//             b++;
-//         }
-//     } // for
-
-//     v = result;
-// } // merge
-
-// void mergesort(vector<string> &v, int begin, int end)
-// {
-//     if (end - begin <= 1)
-//         return; // base case
-
-//     int mid = (begin + end) / 2;
-//     mergesort(v, begin, mid);
-//     mergesort(v, mid, end);
-//     merge(v, begin, mid, end);
-// }
-
-// void mergesort(vector<string> &v)
-// {
-//     mergesort(v, 0, v.size());
-// }
-
 int main()
 {
     // read in the words from cin
-    cout << "Reading words ..." << endl;
     vector<string> words;
     string w;
     while (cin >> w)
@@ -132,9 +78,7 @@ int main()
     }
 
     // randomly re-arrange them
-    cout << "Sorting " << words.size() << " words using mergesort ..." << endl;
     mergesort(words);
-    cout << "done!\n";
 
     // write them to cout
     for (string w : words)
