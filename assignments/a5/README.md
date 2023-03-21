@@ -75,6 +75,17 @@ If you do with a partner, keep this in mind:
 - **3 marks** Quality of the user interface. It should be both easy to read
   and look nice. 
 - **5 marks**: Code readability and style.
+  - All code is sensibly and consistently indented, and all lines are 100
+    characters in length, or less.
+  - Whitespace is used to group related pieces of a code to make it easier for
+    humans to read. All whitespace has a purpose.
+  - Variable and function names are self-descriptive.
+  - Appropriate features of C++ are used, as discussed in class and in the
+    notes. **Note** If you use a feature that we haven't discussed in class,
+    **you must explain it in a comment**, even if you think it's obvious.
+  - Comments are used when needed to explain chunks of code whose purpose is not
+    obvious from the code itself. There should be *no* commented-out code from
+    previous versions.
 
 ### Report: 5 marks
 - **5 marks**: The "Assignment 5 Report" at the bottom of [a5.cpp](a5.cpp) is
