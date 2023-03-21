@@ -33,7 +33,7 @@ Assignments will be posted here when they're ready.
 - [Assignment 2](assignments/a2)
 - [Assignment 3](assignments/a3)
 - [Assignment 4](assignments/a4)
-- Assignment 5
+- [Assignment 5](assignments/a5)
 
 ## Sample Exams
 
