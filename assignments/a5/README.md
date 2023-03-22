@@ -6,12 +6,12 @@
 
 *Order and Chaos* is a 2-player game played on a 6-by-6 (or bigger) grid of
 squares. One player is *Order*, the other is *Chaos*. They take turns placing
-either an *X* or an *O* in an empty square (players choose whether to place an
-*X* or *O*). *Order* wins if they make 5 *X*s or *O*s in a line (horizontally,
+either an *X* or an *O* in an empty square (players can place an *X* or *O*,
+their choice). *Order* wins if they make 5 *X*s or *O*s in a line (horizontally,
 vertically, or diagonally), and *Chaos* wins if they can prevent this.
 
-Keep in mind that an unusual feature of this game is that both players can play
-*X*s and *O*s. On their turn, a player can place either an *X* or an *O*.
+An unusual feature of this game is that both players can play *X*s and *O*s. On
+their turn, a player can choose to play either an *X* or an *O*.
 
 For this assignment, your task is to implement *Order and Chaos* allowing a
 human player to play against the computer.
