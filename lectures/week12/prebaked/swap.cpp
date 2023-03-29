@@ -4,14 +4,14 @@
 
 using namespace std;
 
-void swap(int &a, int &b)
+void swap_values(int &a, int &b)
 {
     int temp = a;
     a = b;
     b = temp;
 }
 
-void swap(string &a, string &b)
+void swap_values(string &a, string &b)
 {
     string temp = a;
     a = b;
@@ -44,7 +44,21 @@ void swap(string &a, string &b)
 //     cout << "s = " << s << ", t = " << t << "\n";
 // }
 
+// struct Person {
+//     string name;
+//     int age;
+// }; 
+
+// void person_swap_demo() {
+//     Person p1 = {"Alice", 20};
+//     Person p2 = {"Bob", 21};
+//     cout << "p1 = " << p1.name << ", p2 = " << p2.name << "\n";
+//     swap(p1, p2);
+//     cout << "p1 = " << p1.name << ", p2 = " << p2.name << "\n";
+// }
+
 int main()
 {
     // swap_demo();
+    // person_swap_demo();
 }

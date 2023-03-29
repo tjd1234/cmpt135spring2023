@@ -59,7 +59,20 @@ void min_of_demo()
          << "\n";
 }
 
+// struct Person {
+//     string name;
+//     int age;
+// }; 
+
+// void person_min_demo() {
+//     Person p1 = {"Alice", 20};
+//     Person p2 = {"Bob", 21};
+//     cout << "p1 = " << p1.name << ", p2 = " << p2.name << "\n";
+//     cout << "min = " << min_of(p1, p2).name << "\n";
+// }
+
 int main()
 {
     min_of_demo();
+    person_min_demo();
 }
