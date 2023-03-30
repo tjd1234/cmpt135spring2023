@@ -32,9 +32,9 @@ ostream &operator<<(ostream &os, const vector<T> &v)
     os << "{";
     for (int i = 0; i < v.size(); i++)
     {
-        os << v[i];
-        if (i < v.size() - 1)
+        if (i > 0)
             os << ", ";
+        os << v[i];
     }
     os << "}";
     return os;
@@ -59,12 +59,14 @@ void min_of_demo()
          << "\n";
 }
 
-// struct Person {
+// struct Person
+// {
 //     string name;
 //     int age;
-// }; 
+// };
 
-// void person_min_demo() {
+// void person_min_demo()
+// {
 //     Person p1 = {"Alice", 20};
 //     Person p2 = {"Bob", 21};
 //     cout << "p1 = " << p1.name << ", p2 = " << p2.name << "\n";
@@ -74,5 +76,5 @@ void min_of_demo()
 int main()
 {
     min_of_demo();
-    person_min_demo();
+    // person_min_demo();
 }
