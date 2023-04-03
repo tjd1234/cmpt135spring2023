@@ -1,0 +1,1 @@
+Clean compiling refers to the idea of only considering a program to be compile if the compiler does *not* issue any warnings.

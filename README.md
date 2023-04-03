@@ -24,6 +24,12 @@ download them to your computer.
   [cmpt_trace.cpp](cmpt_trace.cpp) print consistently indented message when a
   function is entered and when it is exited. This can be useful for debugging,
   and can result in nice patterns when used with recursive functions.
+- [Obsidian notes](135website/). Weekly course notes that appeared in the
+  Obsidian website. That website changes semester by semester, and so 
+  [the entire website is here](135website/). These are the notes for the course. 
+  They are best viewed in [Obsidian](obsidian.md), a free note-taking app. You
+  can then look at the notes on your computer, and even add-to, or edit them, as
+  you wish.
 
 ## Assignments
 

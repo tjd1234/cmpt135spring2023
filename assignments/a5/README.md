@@ -6,9 +6,10 @@
 
 *Order and Chaos* is a 2-player game played on a 6-by-6 (or bigger) grid of
 squares. One player is *Order*, the other is *Chaos*. They take turns placing
-either an *X* or an *O* in an empty square (players can place an *X* or *O*,
-their choice). *Order* wins if they make 5 *X*s or *O*s in a line (horizontally,
-vertically, or diagonally), and *Chaos* wins if they can prevent this.
+either an *X* or an *O* in an empty square (players always have the choice of
+placing an *X* or *O*). *Order* wins if they make 5 *X*s or *O*s in a line
+(horizontally, vertically, or diagonally), and *Chaos* wins if they can prevent
+this.
 
 An unusual feature of this game is that both players can play *X*s and *O*s. On
 their turn, a player can choose to play either an *X* or an *O*.
@@ -96,7 +97,7 @@ If you do with a partner, keep this in mind:
     follows
   - acknowledgements of any help you received
   - the report is neatly formatted, uses full sentences, good grammar, and
-    proper spelling
+    correct spelling
 
 ### Deductions
 
@@ -123,7 +124,7 @@ helps you with this assignment, then cite their help in the report at the end.
 
 ## Submitting Your Work
 
-On Canvas, please submit just the file[a5.cpp](a5.cpp) with your answers in
+On Canvas, please submit just the file [a5.cpp](a5.cpp) with your answers in
 it. Don't submit anything else.
 
 The marker will compile your [a5.cpp](a5.cpp) using 

@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "type": "file",
+      "title": "CMPT 135 Notes",
+      "path": "CMPT 135 Notes.md"
+    },
+    {
+      "type": "file",
+      "title": "Tag Legend",
+      "path": "Tag Legend.md"
+    },
+    {
+      "type": "file",
+      "title": "Start Here",
+      "path": "CMPT 135.md"
+    },
+    {
+      "type": "file",
+      "title": "To Do",
+      "path": "ToDo.md"
+    }
+  ]
+}

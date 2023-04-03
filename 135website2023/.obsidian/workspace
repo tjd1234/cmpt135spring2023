@@ -1,0 +1,146 @@
+{
+  "main": {
+    "id": "b19ccea196e30be0",
+    "type": "split",
+    "children": [
+      {
+        "id": "187a6d4af22b7f0b",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "CMPT 135.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      },
+      {
+        "id": "6c235710f33e86d2",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "namespace.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d098f72c103b65de",
+    "type": "split",
+    "children": [
+      {
+        "id": "df6588ea02bf1c80",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "848aec0bf17bd821",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "0d16780947c06b16",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "829e3ddae101d09c",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 149
+  },
+  "right": {
+    "id": "e8f2d9007d9a3a16",
+    "type": "split",
+    "children": [
+      {
+        "id": "ecc116b93f3fd502",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "057997a6b73788df",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "namespace.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "43fdfe39a5c0b180",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "d48c0df6c928aaa1",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "namespace.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 222,
+    "collapsed": true
+  },
+  "active": "6c235710f33e86d2",
+  "lastOpenFiles": [
+    "namespace.md",
+    "separate compilation.md",
+    "CMPT 135.md",
+    "basic sorting.md",
+    "easy and hard problems.md",
+    "key operation.md",
+    "Using Templates.md",
+    "The STL and generic programming.md",
+    "iterators.md",
+    "O-notation.md"
+  ]
+}
